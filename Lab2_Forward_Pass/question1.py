@@ -6,7 +6,7 @@
 import numpy as np
 
 # calculate z = sum(WiXi +b)
-def calcZ(x,w):
+def calcZ(x,w,b):
     return np.dot(x,w)+b
 
 # calculate a with different activation function
@@ -26,7 +26,7 @@ def calcArelu(z):
 def mainloop(x,w,activation):
     loop = 1
     for val in w:
-        z = calcZ(x,val)
+        z = calcZ(x,val,b)
         print(f"z values for Layer {loop} : {z} ")
         if activation == "sigmoid":
             a = calcAsig(z)
